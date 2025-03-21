@@ -1,8 +1,12 @@
+
+@token = CfDJ8HmU2UI85UpGm3s7AjERtKBBNZRw7lorh4JGGQkxkPHEtIPwNrzZHdflMXBdNrvTc2sxg9UEEOA4QV38yqLa785ph2I1IB1Yw4Bwey_hhHNf5QjUCxR0h0Nl6JXvvFxhRwuURlV65bJzPdHeLaTaFo312SqfMxqfWQCYlEduV-ykZAAO0zPiJJK7XlrJVrHultF4oNhkUUUcGG_wGl7FxGBbhhIPRgH0KAULNcQkg8dpAAQ7aDKVGqa1Bey5uLKkhu2P_fEJeLM-GranYaD-xtZOEFwDVUaoTq4mtDsZHFAHY4J7vLdioIM6bDN5f8GaxNY2ln1VwdroCaEVBN3elWOuyKHNBQZaLMYZM9QEgD2Gkv_MWl20OXH27EZKXn3ZJGKche9DLTIS79Gn-tHa3s6o7V4BP5LZPMulalXnQ_pklUEpJSF4gzMndEbO2jTpRCecRORVXSwjBfHYF2VvNliiCWSZ311c2S-Nhj-Jaepc-KAJDfACl17uN10a-effk4SllMomcpoSgOZVAsdAjmBOpgmAVbaijwWCUNNjX7smaN-QZFkaGwmO4CIx2bFP0s5D0-dfPCy6cqIUE18AMs4yL4lsEMtqiK94Ok75x9HylUTHHk7vG50OfkRY1NnwTFAxLE6vef5u-zSH4vXYvN9YoFwFIilxrEmLDhxVXSyiD3XNAOwQoewDnNc67-K5iLdIZSwpi9TnL2oWyNqYMgDCfLZg3dFaM_S7pJ9iDxE06kutgPZjC3ftMsLAxKaHoHMVQUyiQyesplFJbVrp25qVGj6nn8cv9JwbIjZZjdID
 @Restaurants.API_HostAddress = http://localhost:5232
 
-@token=CfDJ8HmU2UI85UpGm3s7AjERtKDgmKc25naVYcFkPXA9NizltUn3nihQndFqxZktQaPb6ScQmTeeVVmJKgnmi7AOW0kIZ6seGAuOU3dsasu_Nso4AWEg4_YQhpv9cWvrT52CVkrLX5HknezWu2hjf52uhAu6qJ5RtD5Zkw_suoOvklI2gHlwfi-l-OqflEDdE6gPH9y683_Ts_YpfhnWJRko3yvhH9Y9ISLS_mGToxg4xri2V6Y67qEP6FvZhfh3MTtQDxgsGHc7uF_kYquHyUOy_S5l4ARqCp75SydqmyztllmZfRsrjfTmT3w3FKPPrV46ROZFHxWbnQhwXKRi2zUlJzDkmHHo9Ef3VQWYisiGaqRFw3LbK4Y3Rn1qnMQc2MW3o1rGq1ES5N1BNJFqnkF71-EmTnvQqvt3Sifw9nurDBAkHtPtYjWkrMYla6MbuRgBWeKhQc0bkR0uTI4NnMtTrpNYpIzczVcH8lU-y_NdbRCu1ZpNy2q201CY0K1NJxzy1-c6FS6eKc5l5_822YfHj8oKhSopND7t_O03ISJZYLGOzyDV6oCHaqDvhLxaprgeSivwqDAAZUBHMewZdBVu-QvxTiTlvyR7PHVE1RNNx6VUi0vXVfAzJK4o0CNxKYYrXK-9u2SNzH9duoksFyRJGflC7fiHbvEX3w9akHSHYrNlKgJyNs9jaKcEqBYScM8rwQ
-GET {{Restaurants.API_HostAddress}}/api/restaurants
-Authorization: Bearer {{token}}
+
+###
+GET {{Restaurants.API_HostAddress}}/api/restaurants?searchPhrase=&pageSize=5&pageNumber=1&sortBy=Name&sortDirection=Descending
+//Authorization: Bearer {{token}}
+
 ###
 GET {{Restaurants.API_HostAddress}}/api/restaurants/3
 
@@ -18,10 +22,11 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/3/dishes/3
 ###
 
 POST {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-   "Name": "Tasty Tests2",
+   "Name": "Owner Restaurant",
       "Description": "A cozy restaurant serving a variety of delicious dishes.",
       "Category": "Indian",
       "HasDelivery": true,
@@ -68,7 +73,7 @@ POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-    "email": "testuser@test.com",
+    "email": "user@test.com",
     "password": "Password1!"
 }
 
@@ -78,7 +83,7 @@ POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-    "email": "testuser@test.com",
+    "email": "owner@test.com",
     "password": "Password1!"
 }
 
